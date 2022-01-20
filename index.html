@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OrbitronCalc</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+        body {
+            background: rgb(5, 5, 5);
+        }
+
+        * {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .w {
+            width: 360px;
+            margin: auto;
+            height: 620px;
+            background: #54a046;
+            border: 3px solid black;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        input[type=text] {
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+            height: 50px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            font-size: 22px;
+            font-family: 'Orbitron', sans-serif;
+            margin-top: 20px;
+            border-radius: 5px;
+            border-color: rgb(255, 255, 255);
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        input[type=button] {
+            background-color: #5c5af1;
+            color: rgb(252, 246, 246);
+            width: 63px;
+            padding: 5px;
+            font-size: 18px;
+            font: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-color: #0a07f1;
+        }
+
+        input[type=reset] {
+            background-color: #ff0000;
+            color: rgb(252, 246, 246);
+            width: 63px;
+            padding: 5px;
+            font-size: 18px;
+            font: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-color: #0a07f1;
+        }
+
+        input[class=buttono] {
+            background-color: #e2fa0c;
+            color: rgb(0, 0, 0);
+            width: 63px;
+            padding: 5px;
+            font-size: 18px;
+            font: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-color: #0a07f1;
+        }
+
+        .buttono {
+            background-color: #e2fa0c;
+            color: rgb(0, 0, 0);
+            width: 63px;
+            padding: 5px;
+            font-size: 18px;
+            font: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-color: rgb(0, 0, 0);
+        }
+
+        .buttonf:hover {
+            background-color: #e3f165;
+            color: rgb(0, 0, 0);
+            width: 63px;
+            padding: 5px;
+            font-size: 18px;
+            font: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-color: #e2fa0c;
+        }
+
+        input[class=buttonm] {
+            background-color: blue;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            font: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-color: #0a07f1;
+        }
+
+        .buttonm {
+            background-color: blue;
+            color: rgb(0, 0, 0);
+            width: 63px;
+            font-size: 18px;
+            font: bold;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .buttonm:hover {
+            background-color: blue;
+            color: rgb(0, 0, 0);
+            width: 63px;
+            font-size: 18px;
+            font: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-color: #0a07f1;
+        }
+
+        .container {
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .item {
+            width: 10em;
+        }
+
+        #del {
+            width: 39%;
+        }
+
+        input:hover {
+            background-color: #0a07f1;
+            color: #fff;
+            border-color: #0a07f1;
+        }
+
+        .box {
+            background-color: gray;
+            color: #000;
+        }
+
+        .box:hover {
+            background-color: lightsteelblue;
+            color: #000;
+        }
+
+        .containerManual {
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .manual {
+            background-color: lightseagreen;
+            color: rgb(0, 0, 0);
+            width: 250px;
+            height: 25px;
+            font-size: 15px;
+            font: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-color: rgb(0, 0, 0);
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .manual:hover {
+            background-color: blue;
+            color: white;
+            font: bold;
+            font-family: 'Orbitron', sans-serif;
+            border-color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <br />
+    <div class="w">
+        <form name="cal">
+
+            <img style="position: relative;" src="images/favicon.png"
+                title="OrbitronCalc (Ver. 7.0.0)   https://github.com/andrealimongelli " width="20" height="20">
+
+
+            <input type="text" class="box" name="display" disabled>
+            <br><br>
+
+            <input type="button" value="7" onclick="cal.display.value+='7'">
+            <input type="button" value="8" onclick="cal.display.value+='8'">
+            <input type="button" value="9" onclick="cal.display.value+='9'">
+            <input class="buttono" type="button" value="(" onclick="cal.display.value+='('">
+            <input class="buttono" type="button" value=")" onclick="cal.display.value+=')'">
+            <br><br>
+
+            <input type="button" value="4" onclick="cal.display.value+='4'">
+            <input type="button" value="5" onclick="cal.display.value+='5'">
+            <input type="button" value="6" onclick="cal.display.value+='6'">
+            <input class="buttono" type="button" value="+" onclick="cal.display.value+='+'">
+            <input class="buttono" type="button" value="-" onclick="cal.display.value+='-'">
+            <br><br>
+
+            <input type="button" value="1" onclick="cal.display.value+='1'">
+            <input type="button" value="2" onclick="cal.display.value+='2'">
+            <input type="button" value="3" onclick="cal.display.value+='3'">
+            <input class="buttono" type="button" value="x" onclick="cal.display.value+='*'">
+            <input class="buttono" type="button" value="÷" onclick="cal.display.value+='/'">
+            <br><br>
+
+            <input type="button" value="0" onclick="cal.display.value+='0'">
+            <input class="buttono" type="button" value="=" onclick="calc()" id="del">
+            <input class="buttono" type="button" value="." onclick="cal.display.value+='.'">
+            <input title="All clear" type="reset" value="AC" onclick="cal.display.value=''">
+            <br><br>
+
+            <input title="Clear last entry" type="button" value="CE" onclick="back()">
+            <input title="M+" class="button" type="button" value="M+" onclick="mplus()">
+            <input title="M-" class="button" type="button" value="M-" onclick="mminus()">
+            <input title="Memory recall" type="button" value="MR" onclick="mr()">
+            <input title="Memory clear" class="button" type="button" value="MC" onclick="mc()">
+            <br><br>
+
+            <input title="Returns % (x)" class="button" type="button" value="%" onclick="cal.display.value+='*0.01*'">
+            <input title="Returns √(x)" type="button" value=" √ " onclick="sq()">
+            <input title="Returns x^y" type="button" value="x^y" onclick="cal.display.value+='**'">
+            <input title="Returns n!" class="button" type="button" value="n!" onclick="factorial(cal.display.value)">
+            <input title="Returns x MOD y" type="button" value="MOD" onclick="cal.display.value+='%'">
+            <br><br>
+
+            <input title="Returns π value" type="button" value="π" onclick="cal.display.value+=Math.PI">
+            <input title="Returns the natural logarithm of x" type="button" value="LOG" onclick="lg()">
+            <input title="Returns sin(x)" type="button" value="SIN" onclick="sin()">
+            <input title="Returns cos(x)" type="button" value="COS" onclick="cos()">
+            <input title="Returns tan(x)" type="button" value="TAN" onclick="tan()">
+            <br><br>
+
+            <input title="Converts to bin value" class="button" type="button" value="BIN" onclick="bin()">
+            <input title="Converts to ter value" class="button" type="button" value="TER" onclick="ter()">
+            <input title="Converts to oct value" class="button" type="button" value="OCT" onclick="oct()">
+            <input title="Converts to dec value" class="button" type="button" value="DEC" onclick="dec()">
+            <input title="Converts to hex value" class="button" type="button" value="HEX" onclick="hex()">
+            <br><br>
+
+
+
+            <div class="containerManual">
+
+
+                <button title="Click here" class="manual" onmouseover="cal.display.value+='Click to read the manual'"
+                    onmouseout="cal.display.value=''" onclick="openwindow()">OrbitronCalc Manual</button>
+
+            </div>
+
+    </div>
+    </form>
+
+    <script>
+
+        var mem = 0.00;
+
+        function bin() {
+            cal.display.value = (parseInt(cal.display.value).toString(2));
+        }
+        function ter() {
+            cal.display.value = (parseInt(cal.display.value).toString(3));
+        }
+        function oct() {
+            cal.display.value = (parseInt(cal.display.value).toString(8));
+        }
+        function dec() {
+            cal.display.value = (parseInt(cal.display.value).toString(10));
+        }
+        function hex() {
+            cal.display.value = (parseInt(cal.display.value).toString(16));
+        }
+        function sq() {
+            cal.display.value = Math.sqrt(cal.display.value);
+        }
+        function sin() {
+            zero();
+            cal.display.value = Math.sin(cal.display.value);
+        }
+        function cos() {
+            zero();
+            cal.display.value = Math.cos(cal.display.value);
+        }
+        function tan() {
+            zero();
+            cal.display.value = Math.tan(cal.display.value);
+        }
+        function lg() {
+            zero();
+            cal.display.value = Math.log(cal.display.value);
+        }
+        function factorial(n) {
+            zero();
+            if ((cal.display.value) % 1 === 0) {
+                var ansfact = 1;
+                for (var i = 2; i <= n; i++)
+                    ansfact = ansfact * i;
+                cal.display.value = ansfact;
+            } else {
+                cal.display.value = 'not an integer ';
+            }
+        }
+        function back() {
+            var ansback = cal.display.value.slice(0, cal.display.value.length - 1);
+            cal.display.value = ansback;
+        }
+        function mplus() {
+            zero();
+            mem += eval(cal.display.value);
+            cal.display.value = '';
+        }
+        function mminus() {
+            zero();
+            mem -= eval(cal.display.value);
+            cal.display.value = '';
+        }
+        function mr() {
+            zero();
+            cal.display.value += eval(mem);
+
+        }
+        function mc() {
+            zero();
+            mem = 0.00;
+        }
+        function zero() {
+            while (cal.display.value[0] == 0) {
+                cal.display.value = cal.display.value.substring(1);
+            }
+        }
+        function calc() {
+            zero();
+            cal.display.value = Math.floor(((parseFloat(eval(cal.display.value))).toFixed(14)) * 100000000000000) / 100000000000000;
+        }
+        function openwindow() {
+            var newwindow = window.open();
+            newwindow.document.write("<!DOCTYPE html>  <title>OrbitronCalc Manual</title> <button style=\"background-color:orange; border-color:white; color:black; \" onclick = 'window.close()' > Close Manual</button > <br><br><br>");
+            newwindow.document.write("<div>");
+            newwindow.document.write("<style> div {width: 100%;  height: 100%;  min-height: 100px;   font-size: 1.40em;  display: inline;} </style>");
+            newwindow.document.write("<input type=\"reset\" value = \"AC\" <p> All clear</p> ");
+            newwindow.document.write("<input type=\"reset\" value = \"CE\" <p> Clear last entry</p>");
+            newwindow.document.write("<input type=\"reset\" value = \"M+\" <p> Memory plus</p>");
+            newwindow.document.write("<input type=\"reset\" value = \"M-\" <p> Memory minus</p>");
+            newwindow.document.write("<input type=\"reset\" value = \"MR\" <p> Memory recall</p>");
+            newwindow.document.write("<input type=\"reset\" value = \"MC\" <p> Memory clear</p>");
+            newwindow.document.write("<input type=\"reset\" value = \"%\" <p> Ex. 100 % 5 = 5</p>");
+            newwindow.document.write("<input type=\"reset\" value = \"√\" <p> Ex. 25 √ = 5</p>");
+            newwindow.document.write("<input type=\"reset\" value = \"x^y\" <p> Ex. 2 x^y 3 = 8</p>");
+            newwindow.document.write("<input type=\"reset\" value = \"n!\" <p> Ex. 5 n! = 120 </p>");
+            newwindow.document.write("<input type=\"reset\" value = \"MOD\" <p> Ex. 3 MOD 2 = 1</p>");
+            newwindow.document.write("<button style=\"background-color: #5c5af1; border-color:blue; color:white; margin:auto; display:block; font-size: 1.0em\" onclick = \"window.open('https://github.com/andrealimongelli')\" > https://github.com/andrealimongelli</button > <br>");
+            newwindow.document.write("<\div>");
+        }
+    </script>
+</body>
+
+</html>
