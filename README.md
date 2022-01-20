@@ -4,27 +4,27 @@
 OrbitronCalc is a  web-based calculator.
 
 ## **Manual**
-**AC**  All clear
+**AC**  (All clear)
 
-**CE**  Clear last entry
+**CE**  (Clear last entry)
 
-**M+**  Memory plus
+**M+**  (Memory plus)
 
-**M-**  Memory minus
+**M-**  (Memory minus)
 
-**MR**  Memory recall
+**MR**  (Memory recall)
 
-**MC**  Memory clear
+**MC**  (Memory clear)
 
-**%**  Ex. 100 % 5 = 5
+**%**  (Ex. 100 % 5 = 5)
 
-**√**  Ex. 25 √ = 5
+**√**  (Ex. 25 √ = 5)
 
-**x^y**  Ex. 2 x^y 3 = 8
+**x^y**  (Ex. 2 x^y 3 = 8)
 
-**n!**  Ex. 5 n! = 120
+**n!**  (Ex. 5 n! = 120)
 
-**MOD**  Ex. 3 MOD 2 = 1
+**MOD**  (Ex. 3 MOD 2 = 1)
 
 ## **Installation**
 You need no installation, just open you preferred browser and start to use OrbitronCalc!
