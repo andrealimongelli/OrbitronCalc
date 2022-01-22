@@ -24,10 +24,10 @@
             width: 360px;
             margin: auto;
             height: 620px;
-            background: #54a046;
+            background: rgb(185, 185, 185);
             border: 3px solid black;
             padding: 10px;
-            border-radius: 20px;
+            border-radius: 25px;
         }
 
         input[type=text] {
@@ -40,7 +40,7 @@
             font-family: 'Orbitron', sans-serif;
             margin-top: 20px;
             border-radius: 5px;
-            border-color: rgb(255, 255, 255);
+            border-color: blue;
             text-align: right;
             padding-right: 10px;
         }
@@ -54,6 +54,7 @@
             font: bold;
             font-family: 'Orbitron', sans-serif;
             border-color: #0a07f1;
+            border-radius: 5px;
         }
 
         input[type=reset] {
@@ -65,6 +66,7 @@
             font: bold;
             font-family: 'Orbitron', sans-serif;
             border-color: #0a07f1;
+            border-radius: 5px;
         }
 
         input[class=buttono] {
@@ -76,6 +78,7 @@
             font: bold;
             font-family: 'Orbitron', sans-serif;
             border-color: #0a07f1;
+            border-radius: 5px;
         }
 
         .buttono {
@@ -87,6 +90,7 @@
             font: bold;
             font-family: 'Orbitron', sans-serif;
             border-color: rgb(0, 0, 0);
+            border-radius: 5px;
         }
 
         .buttonf:hover {
@@ -98,24 +102,30 @@
             font: bold;
             font-family: 'Orbitron', sans-serif;
             border-color: #e2fa0c;
+            border-radius: 5px;
         }
 
         input[class=buttonm] {
-            background-color: blue;
-            color: rgb(0, 0, 0);
+            background-color: #5c5af1;
+            border-color: #0a07f1;
+            color: rgb(252, 246, 246);
             font-size: 20px;
             font: bold;
             font-family: 'Orbitron', sans-serif;
             border-color: #0a07f1;
+            border-radius: 5px;
         }
 
         .buttonm {
-            background-color: blue;
-            color: rgb(0, 0, 0);
+            background-color: #5c5af1;
+            border-color: #0a07f1;
+            color: rgb(252, 246, 246);
             width: 63px;
             font-size: 18px;
             font: bold;
             font-family: 'Orbitron', sans-serif;
+            border-radius: 5px;
+
         }
 
         .buttonm:hover {
@@ -126,6 +136,8 @@
             font: bold;
             font-family: 'Orbitron', sans-serif;
             border-color: #0a07f1;
+            border-radius: 5px;
+
         }
 
         .container {
@@ -133,6 +145,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border-radius: 5px;
         }
 
         .item {
@@ -155,7 +168,8 @@
         }
 
         .box:hover {
-            background-color: lightsteelblue;
+
+            background-color: #fff;
             color: #000;
         }
 
@@ -167,27 +181,29 @@
         }
 
         .manual {
-            background-color: lightseagreen;
-            color: rgb(0, 0, 0);
+            background-color: #5c5af1;
+            border-color: #0a07f1;
+            color: rgb(252, 246, 246);
             width: 250px;
             height: 25px;
             font-size: 15px;
             font: bold;
             font-family: 'Orbitron', sans-serif;
-            border-color: rgb(0, 0, 0);
             text-align: center;
             display: flex;
             flex-direction: row;
             justify-content: center;
+            border-radius: 5px;
         }
 
         .manual:hover {
             background-color: blue;
-            color: white;
+            border-color: #0a07f1;
+            color: rgb(252, 246, 246);
             font: bold;
             font-family: 'Orbitron', sans-serif;
             border-color: white;
-            text-align: center;
+
         }
     </style>
 </head>
@@ -197,7 +213,7 @@
     <div class="w">
         <form name="cal">
 
-            <img style="position: relative;" src="images/favicon.png"
+            <img style="position: relative; " src="images/favicon.png"
                 title="OrbitronCalc (Ver. 7.0.0)   https://github.com/andrealimongelli " width="20" height="20">
 
 
@@ -232,8 +248,8 @@
             <br><br>
 
             <input title="Clear last entry" type="button" value="CE" onclick="back()">
-            <input title="M+" class="button" type="button" value="M+" onclick="mplus()">
-            <input title="M-" class="button" type="button" value="M-" onclick="mminus()">
+            <input title="Memory plus" class="button" type="button" value="M+" onclick="mplus()">
+            <input title="Memory minus" class="button" type="button" value="M-" onclick="mminus()">
             <input title="Memory recall" type="button" value="MR" onclick="mr()">
             <input title="Memory clear" class="button" type="button" value="MC" onclick="mc()">
             <br><br>
@@ -259,10 +275,7 @@
             <input title="Converts to hex value" class="button" type="button" value="HEX" onclick="hex()">
             <br><br>
 
-
-
             <div class="containerManual">
-
 
                 <button title="Click here" class="manual" onmouseover="cal.display.value+='Click to read the manual'"
                     onmouseout="cal.display.value=''" onclick="openwindow()">OrbitronCalc Manual</button>
@@ -355,7 +368,7 @@
         }
         function openwindow() {
             var newwindow = window.open();
-            newwindow.document.write("<!DOCTYPE html>  <title>OrbitronCalc Manual</title> <button style=\"background-color:orange; border-color:white; color:black; \" onclick = 'window.close()' > Close Manual</button > <br><br><br>");
+            newwindow.document.write("<!DOCTYPE html>  <title>OrbitronCalc Manual</title> <button style=\"background-color:orange; border-color:white; color:black; border-radius: 5px;\" onclick = 'window.close()' > X </button > <br><br><br>");
             newwindow.document.write("<div>");
             newwindow.document.write("<style> div {width: 100%;  height: 100%;  min-height: 100px;   font-size: 1.40em;  display: inline;} </style>");
             newwindow.document.write("<input type=\"reset\" value = \"AC\" <p> All clear</p> ");
@@ -369,7 +382,7 @@
             newwindow.document.write("<input type=\"reset\" value = \"x^y\" <p> Ex. 2 x^y 3 = 8</p>");
             newwindow.document.write("<input type=\"reset\" value = \"n!\" <p> Ex. 5 n! = 120 </p>");
             newwindow.document.write("<input type=\"reset\" value = \"MOD\" <p> Ex. 3 MOD 2 = 1</p>");
-            newwindow.document.write("<button style=\"background-color: #5c5af1; border-color:blue; color:white; margin:auto; display:block; font-size: 1.0em\" onclick = \"window.open('https://github.com/andrealimongelli')\" > https://github.com/andrealimongelli</button > <br>");
+            newwindow.document.write("<button style=\"background-color: #5c5af1; border-color:blue; color:white; margin:auto; display:block; font-size: 1.0em; border-radius: 5px;\" onclick = \"window.open('https://github.com/andrealimongelli')\" > https://github.com/andrealimongelli</button > <br>");
             newwindow.document.write("<\div>");
         }
     </script>
